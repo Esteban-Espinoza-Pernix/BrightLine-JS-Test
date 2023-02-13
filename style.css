@@ -1,6 +1,3 @@
-* {
-  box-sizing: border-box;
-}
 
 body {
   max-width: 1440px;
@@ -58,12 +55,9 @@ video {
   height: calc(100vh - 2rem);
   width: 100%;
   display: flex;
-  overflow: scroll;
-  scroll-behavior: smooth;
   list-style: none;
   margin: 0;
   padding: 0;
-  flex-direction: column;
 }
 
 .slider-wrapper {
@@ -77,12 +71,9 @@ video {
   width: 100%;
   height: 100%;
   flex: 1 0 100%;
-  padding: 7%;
-  background-color: #3590d1;
 }
 
 #title {
   display: flex;
-  color: white;
   justify-content: center;
 }
