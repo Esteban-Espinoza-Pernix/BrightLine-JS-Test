@@ -27,8 +27,13 @@ getJSON("https://cdn-media.brightline.tv/training/demo.json", (error, data) => {
 
 function updateVideo() {
   const video = document.querySelector("#video");
+  let source = document.getElementById("videoSource");
+  let title = document.querySelector("#title");
+  title.innerHTML = videos[currentIndex].name
   video.src = videos[currentIndex].mediaFile;
-  video.type = getVideoType(video.src);
+  source.src = videos[currentIndex].mediaFile;
+  source.type = getVideoType(source.src);
+
 }
 
 function getVideoType(videoInfo) {
@@ -47,7 +52,7 @@ function getVideoType(videoInfo) {
   }
 }
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keyup", (event) => {
   switch (event.key) {
     case "ArrowLeft":
       currentIndex--;
@@ -83,7 +88,7 @@ document.addEventListener("fullscreenchange", () => {
   }
 });
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keyup", (event) => {
   if (event.key === "Backspace" && document.fullscreenElement) {
     document.exitFullscreen();
   }
